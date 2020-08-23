@@ -14,4 +14,8 @@ for i in arr:
         master_map[(sample_num,run_num)] = []
         master_map[(sample_num,run_num)].append(i)
 
+for x in master_map:
+    master_map[x].sort()
+
 print(master_map)
+

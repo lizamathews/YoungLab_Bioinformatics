@@ -1,0 +1,4 @@
+cat CHIP_P75_S1_L001_R1_001.txt CHIP_P75_S1_L002_R1_001.txt > CHIP_P75_R1_merged.fastq.gz
+cat CHIP_P76_S2_L001_R1_001.txt CHIP_P76_S2_L002_R1_001.txt > CHIP_P76_R1_merged.fastq.gz
+cat CHIP_P76_S2_L001_R2_001.txt CHIP_P76_S2_L002_R2_001.txt > CHIP_P76_R2_merged.fastq.gz
+cat CHIP_P77_S3_L001_R1_001.txt CHIP_P77_S3_L002_R1_001.txt > CHIP_P77_R1_merged.fastq.gz

@@ -1,7 +1,8 @@
 import os
 import sys
 
-directories = sys.argv[1:]
+directories = sys.argv[1:len(sys.argv)- 1]
+merged_files_path = sys.argv[len(sys.argv)-1]
 master_map = {}
 
 for d in directories:

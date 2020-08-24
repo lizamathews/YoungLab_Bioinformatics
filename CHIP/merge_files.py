@@ -1,20 +1,25 @@
 import os
 import sys
 
-# list of files in directory
-arr = os.listdir('sample_data')
-
-# make dictionary matching P# and R#
+directories = sys.argv[1:]
 master_map = {}
-for i in arr:
-    x = i.split('_')
-    sample_num = x[1]
-    run_num = x[4]
-    if (sample_num,run_num) in master_map:
-        master_map[(sample_num,run_num)].append(i)
-    else:
-        master_map[(sample_num,run_num)] = []
-        master_map[(sample_num,run_num)].append(i)
+
+for d in directories:
+    # list of files in directory
+    arr = os.listdir(d)
+
+    # make dictionary matching P# and R#
+    for i in arr:
+        if i.endswith(".fastq.gz"):
+            x = i.split('_')
+            sample_num = x[1]
+            run_num = x[4]
+            if (sample_num,run_num) in master_map:
+                master_map[(sample_num,run_num)].append(os.path.join(d, i))
+            else:
+                master_map[(sample_num,run_num)] = []
+                master_map[(sample_num,run_num)].append(os.path.join(d, i))
+
 
 # open new text file
 file = open('commands.txt', 'w')        

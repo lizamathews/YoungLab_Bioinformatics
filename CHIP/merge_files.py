@@ -36,7 +36,7 @@ for x in master_map:
     string = "cat "
     for i in master_map[x]:
         string = string + i + " "
-    string = f"{string}> CHIP_{x[0]}_{x[1]}_merged.fastq.gz"
+    string = f"{string}> {merged_files_path}{os.path.sep}CHIP_{x[0]}_{x[1]}_merged.fastq.gz"
     # write command to .txt file
     file.write(string + "\n")
 

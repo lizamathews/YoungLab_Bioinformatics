@@ -25,11 +25,11 @@ for x in master_map:
     if len(master_map[x]) == 1:
         continue
     master_map[x].sort()
-    # start string
+    # start and assemble string
     string = "cat "
     for i in master_map[x]:
         string = string + i + " "
-    string = string + "> CHIP_" + x[0] + "_" + x[1] + "_merged.fastq.gz"
+    string = f"{string}> CHIP_{x[0]}_{x[1]}_merged.fastq.gz"
     # write command to .txt file
     file.write(string + "\n")
 

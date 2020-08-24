@@ -10,7 +10,8 @@ for d in directories:
 
     # make dictionary matching P# and R#
     for i in arr:
-        if i.endswith(".fastq.gz"):
+        # if i.endswith(".fastq.gz"):
+        if i.endswith(".txt"):
             x = i.split('_')
             sample_num = x[1]
             run_num = x[4]
